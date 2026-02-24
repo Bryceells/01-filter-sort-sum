@@ -1,0 +1,48 @@
+﻿@model IndyBooks.ViewModels.SearchResultsVM
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewBag.Title = "Admin Search";
+    Layout = "_Layout";
+    var saleHeading = Model.isSale ? "Books on Sale" : "Search Results";}
+
+<h3>@saleHeading</h3>
+
+<table class="table">
+    <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Edition</th>
+        <th>Price</th>
+        <th>Year</th>
+    </tr>
+
+    @foreach (var book in Model.Books)
+    {
+        <tr>
+            <td>
+                @book.Title
+            </td>
+            <td>
+                @book.Author
+            </td>
+            <td class="rightedge">
+                @book.Edition
+            </td>
+            <td class="rightedge">
+                $@book.Price
+            </td>
+            <td class="rightedge">
+                @book.Year
+            </td>
+        </tr>
+    }
+    @if(Model.isSale)
+        { //TODO: Display the total sale price
+            <tr><td colspan="4" align="right"><b>Total Sale Cost:</b>
+               
+            </td></tr>
+        }
+</table>
+
+
