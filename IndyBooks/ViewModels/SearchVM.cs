@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.Numerics;
 namespace IndyBooks.ViewModels
 {
     public class SearchVM
