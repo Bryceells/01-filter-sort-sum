@@ -15,7 +15,7 @@ namespace IndyBooks.Services
             if (dbContext.Books.Any()) return;
 
             //  TODO: Create two additional books in the seed data 
-            //         then update the database using dotnet-ef database commands
+            //         then update the database using dotnet-ef database commands (done)
             //
             var Books = new Book[] {
                 new Book
