@@ -20,6 +20,21 @@ namespace IndyBooks.Services
             var Books = new Book[] {
                 new Book
                 {
+                    Title = "How to Not Get Arrested",
+                    Author = "Pope Francis",
+                    Price = 15000.00M,
+                    Year = "2025"
+                },
+                new Book
+                {
+                    Title = "Jean Paul John's Fantastic Journey",
+                    Author = "Jean Paul John",
+                    Edition = "1",  
+                    Price = 0.01M,
+                    Year = "2028"
+                },
+                new Book
+                {
                     Title = "Pride and Prejudice",
                     Author = "Jane Austin",
                     Price = 9.99M,
