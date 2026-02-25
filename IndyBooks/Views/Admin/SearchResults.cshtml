@@ -40,6 +40,7 @@
     @if(Model.isSale)
         { //TODO: Display the total sale price
             <tr><td colspan="4" align="right"><b>Total Sale Cost:</b>
+            <td align="right"><b>$@Model.Books.Sum(b => b.Price)</b>
                
             </td></tr>
         }

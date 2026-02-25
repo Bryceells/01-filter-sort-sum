@@ -72,6 +72,18 @@ public class SearchTests
     [Fact]
     public void SearchContainsAllBooksLessThanMaxPrice()
     {
+        // Arrange
+        using var context = new IndyBooksDataContext(_dbContextOptions);
+        repository = new Repository(context);
+        var searchVM = new SearchVM { MaximumPrice = 50m };
+
+        // Act
+        var results = repository.searchResults(searchVM).ToList();
+
+        // Assert
+        Assert.Equal(2, results.Count);
+        Assert.Contains(results, b => b.Title == "The Great Gatsby");
+        Assert.Contains(results, b => b.Title == "Two Towers");
         
     }
 

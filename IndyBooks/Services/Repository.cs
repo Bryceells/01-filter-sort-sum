@@ -30,7 +30,7 @@ public class Repository
         }
     }
     
-    //TODO: complete method to return search results based on the given SearchVM criteria
+    //TODO: complete method to return search results based on the given SearchVM criteria (done)
     public IEnumerable<Book> searchResults(SearchVM searchVM) {
             IQueryable<Book> foundBooks = _db.Books; // start with entire collection
 
@@ -40,12 +40,12 @@ public class Repository
                 //Filter the collection by Title which "contains" the given string
                 foundBooks = foundBooks
                              .Where(b => b.Title.Contains(searchVM.Title))
-                // TODO: Order the results by Title
+                // TODO: Order the results by Title (Done)
                              .OrderBy(b => b.Title);
             }
 
             //TODO: Add similar logic to filter foundbooks collection by last part of the Author's Name, if given
-            // (HINT: consider the EndsWith() method, also adjust the Search View and ViewModel to add items)
+            // (HINT: consider the EndsWith() method, also adjust the Search View and ViewModel to add items) (Done)
             if (searchVM.AuthorsLastName != null && searchVM.AuthorsLastName.Trim().Length > 0)
             {
                 foundBooks = foundBooks
@@ -53,7 +53,7 @@ public class Repository
                              .OrderBy(b => b.Author);
             }
 
-            //TODO: Add similar logic to filter foundbooks collection by price, if given
+            //TODO: Add similar logic to filter foundbooks collection by price, if given (done)
             //       order the results by descending price 
             // (Note: you will need to adjust the Search ViewModel and View to add search fields)
             if (searchVM.MinimumPrice != null)
